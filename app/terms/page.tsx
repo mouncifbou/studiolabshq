@@ -20,7 +20,7 @@ export default function TermsPage() {
             Terms of Service
           </h1>
           <p className="text-sm text-zinc-500 dark:text-zinc-500">
-            Effective date: {company.legalEffectiveDate}
+            {`Effective date: ${company.legalEffectiveDate}`}
           </p>
         </div>
 
