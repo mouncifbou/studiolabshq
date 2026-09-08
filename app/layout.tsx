@@ -20,6 +20,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  verification: {
+    other: {
+      "facebook-domain-verification": "5ocj2pqx06ganujd1h2pi0x2zksv3o",
+    },
+  },
   openGraph: {
     title: "StudioLabs LLC",
     description:
