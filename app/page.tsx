@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { company } from "./company";
 import { SiteHeader } from "./components/SiteHeader";
 import { SiteFooter } from "./components/SiteFooter";
@@ -22,6 +23,53 @@ const services = [
     title: "Growth & Marketing",
     description:
       "Launch campaigns, paid social, and analytics that help your product reach the right customers and keep them.",
+  },
+];
+
+const packages = [
+  {
+    title: "Landing page",
+    price: "from $1,500",
+    description:
+      "A one-page marketing site or product page, designed and built, with analytics and contact form.",
+    timeline: "Delivered in 1–2 weeks",
+  },
+  {
+    title: "Business website",
+    price: "from $4,000",
+    description:
+      "A multi-page website with content management, SEO setup, and integrations such as booking or payments.",
+    timeline: "Delivered in 3–5 weeks",
+  },
+  {
+    title: "Web or mobile app",
+    price: "from $12,000",
+    description:
+      "A custom web application or mobile app, from product strategy and design through development and launch.",
+    timeline: "Delivered in 6–12 weeks",
+  },
+];
+
+const steps = [
+  {
+    title: "Discovery call",
+    description:
+      "A free 30-minute call to understand your goals, audience, and budget.",
+  },
+  {
+    title: "Proposal and quote",
+    description:
+      "Within 3 business days you receive a written scope, fixed price, and timeline.",
+  },
+  {
+    title: "Deposit and kick-off",
+    description:
+      "Work starts once the 50% deposit is paid. You get a shared project board and weekly progress updates.",
+  },
+  {
+    title: "Delivery and handover",
+    description:
+      "You review the final work, we make agreed revisions, and the remaining 50% is due on delivery. Source files and access are handed over the same day.",
   },
 ];
 
@@ -56,6 +104,61 @@ export default function Home() {
               </li>
             ))}
           </ul>
+        </section>
+
+        <section id="pricing" className="flex flex-col gap-6">
+          <h2 className="text-2xl font-semibold tracking-tight">Pricing</h2>
+          <p className="max-w-2xl leading-7 text-zinc-600 dark:text-zinc-400">
+            All prices are in US dollars (USD). Most projects are quoted
+            individually after a free discovery call. The packages below show
+            typical starting points.
+          </p>
+          <ul className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+            {packages.map((pkg) => (
+              <li
+                key={pkg.title}
+                className="flex flex-col gap-3 rounded-lg border border-zinc-200 p-5 dark:border-zinc-800"
+              >
+                <h3 className="font-semibold">{pkg.title}</h3>
+                <p className="text-2xl font-bold tracking-tight">{pkg.price}</p>
+                <p className="text-sm leading-6 text-zinc-600 dark:text-zinc-400">
+                  {pkg.description}
+                </p>
+                <p className="text-xs text-zinc-500 dark:text-zinc-500">{pkg.timeline}</p>
+              </li>
+            ))}
+          </ul>
+          <p className="max-w-2xl text-sm leading-6 text-zinc-500 dark:text-zinc-500">
+            Ongoing support and marketing retainers start at $500 per month,
+            billed monthly in advance. Custom quotes are valid for 30 days.
+          </p>
+        </section>
+
+        <section id="how-it-works" className="flex flex-col gap-6">
+          <h2 className="text-2xl font-semibold tracking-tight">How it works</h2>
+          <ol className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            {steps.map((step, index) => (
+              <li key={step.title} className="flex gap-4">
+                <span className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-zinc-900 text-sm font-semibold text-white dark:bg-zinc-100 dark:text-zinc-900">
+                  {index + 1}
+                </span>
+                <div className="flex flex-col gap-1">
+                  <h3 className="font-semibold">{step.title}</h3>
+                  <p className="text-sm leading-6 text-zinc-600 dark:text-zinc-400">
+                    {step.description}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <p className="max-w-2xl text-sm leading-6 text-zinc-500 dark:text-zinc-500">
+            Payment: 50% deposit to start, 50% on delivery. We accept major
+            credit and debit cards and bank transfer. See our{" "}
+            <Link href="/refunds" className="underline hover:text-zinc-900 dark:hover:text-zinc-100">
+              Refund &amp; Cancellation Policy
+            </Link>
+            .
+          </p>
         </section>
 
         <section id="about" className="flex flex-col gap-4">

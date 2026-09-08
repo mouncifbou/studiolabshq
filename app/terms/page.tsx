@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { company } from "../company";
 import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
@@ -56,6 +57,23 @@ export default function TermsPage() {
               client is governed by a separate written agreement, proposal, or
               statement of work. In the event of a conflict, that agreement
               controls.
+            </p>
+          </section>
+
+          <section className="flex flex-col gap-3">
+            <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100">
+              Payment, refunds and cancellations
+            </h2>
+            <p>
+              Prices are quoted in US dollars (USD). Fixed-price projects are
+              payable 50% in advance and 50% on delivery unless the proposal
+              states otherwise; retainers are billed monthly in advance. We
+              accept major credit and debit cards and bank transfer. Refunds and
+              cancellations are handled as described in our{" "}
+              <Link href="/refunds" className="underline">
+                Refund &amp; Cancellation Policy
+              </Link>
+              , which forms part of these Terms.
             </p>
           </section>
 

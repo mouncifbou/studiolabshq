@@ -14,6 +14,9 @@ export function SiteFooter() {
             <Link href="/terms" className="hover:text-zinc-900 dark:hover:text-zinc-100">
               Terms of Service
             </Link>
+            <Link href="/refunds" className="hover:text-zinc-900 dark:hover:text-zinc-100">
+              Refund Policy
+            </Link>
           </nav>
         </div>
         <p>
